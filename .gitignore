@@ -1,14 +1,30 @@
-.gradle
-/build/
+# Gradle generated stuff
+.gradle/
+build/
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# IntelliJ IDEA generated cruft
+*.iml
+.idea/
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+# Eclipse generated cruft
+bin/
+.metadata/
+*.classpath
+*.project
+.settings/
 
-# Cache of project
-.gradletasknamecache
+*.class
 
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+# *.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# sqlite files
+*.sqlite
