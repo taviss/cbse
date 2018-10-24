@@ -1,0 +1,26 @@
+ext {
+
+     staticRepo = {
+         repositories.maven {
+             url  project.rootDir.toURI().toURL().toString() + "../etc/repository/"
+             name = "localStaticRepo"
+         }
+     }
+}
+
+// Standard repositories - all projects get this build
+repositories {
+    staticRepo()
+    mavenCentral()
+    maven {
+        // adds the maven repo for this plugin
+        url "https://dl.bintray.com/osgi-unit/maven"
+    }
+    jcenter()
+    maven {
+        url "http://dist.wso2.org/maven2/"
+    }
+}
+
+// add these to ext so we can simplify re-use
+ext.standardRepos = repositories

@@ -1,0 +1,31 @@
+description = 'OSGi Service API'
+
+apply plugin: 'osgiUnit'
+
+dependencies {
+    compile lib_sets.core
+
+    compile project(':osgi:movie.finder.raw.alpha.impl')
+    compile project(':osgi:movie.finder.raw.beta.impl')
+    compile project(':osgi:movie.lister.raw.one.impl')
+    compile project(':osgi:movie.lister.raw.two.impl')
+    
+    compile project(':osgi:movie.finder.ds.impl')
+
+    testRuntime libraries.equinox_services
+    testRuntime lib_sets.equinox_runtime
+
+    testFramework libraries.equinox_core
+}
+
+test {
+    systemProperty 'log4j.configuration', new File(projectDir, "log4j.properties").absoluteFile.toURL().toString()
+}
+
+
+jar {
+    manifest {
+        instruction 'Bundle-Name', project.description
+        instruction 'Service-Component', 'OSGI-INF/*.xml'
+    }
+}

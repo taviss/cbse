@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="movie.finder.api.MovieFinderFactoryRegistry">
+    <implementation class="com.cbse.osgi.movie.finder.ds.api.MovieFinderFactoryRegistry"/>
+    <reference interface="com.cbse.osgi.movie.finder.ds.api.MovieFinderFactory" name="movie.finder.api.MovieFinderFactory" policy="dynamic" cardinality="1..n" bind="bindMovieFinderFactory" unbind="unbindMovieFinderFactory"/>
+</scr:component>

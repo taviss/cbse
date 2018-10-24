@@ -1,0 +1,47 @@
+apply from: "${rootDir}/dependencies.gradle"
+apply from: 'repositories.gradle'
+
+buildscript {
+    repositories {
+        // dependencies from MVN central (you can use others)
+        mavenCentral()
+        maven {
+            // adds the maven repo for this plugin
+            url "https://dl.bintray.com/osgi-unit/maven"
+        }
+    }
+    dependencies {
+        classpath 'com.asteroid.duck:osgi-unit-gradle:1.0.3'
+    }
+}
+
+def baseVersion = "0.0.1"
+
+allprojects {
+    group = 'com.cbse'
+    // suffix is used in osgi versions, so can must comply with qualifier ::= ( alphanum | '_' | '-' )+
+    def suffix = project.hasProperty('version_suffix') ? version_suffix.replaceAll("[^\\w_-]","-") : '-SNAPSHOT'
+    version = "${baseVersion}${suffix}"
+}
+
+subprojects {
+    apply from: "${rootDir}/repositories.gradle"
+
+    apply plugin: 'java'
+
+    compileJava {
+        // we target 1.7 source and .class format
+        sourceCompatibility = 1.7
+        targetCompatibility = 1.7
+    }
+
+    compileTestJava {
+        // we target 1.7 source and .class format
+        sourceCompatibility = 1.7
+        targetCompatibility = 1.7
+    }
+
+    ext {
+        projectName = project.name
+    }
+}

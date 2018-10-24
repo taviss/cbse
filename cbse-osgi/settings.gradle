@@ -1,0 +1,15 @@
+//include 'osgi:ds.api'
+//include 'osgi:ds.impl'
+include 'osgi:movie.finder.raw.api'
+include 'osgi:movie.lister.raw.api'
+include 'osgi:movie.finder.raw.alpha.impl'
+include 'osgi:movie.finder.raw.beta.impl'
+include 'osgi:movie.lister.raw.one.impl'
+include 'osgi:movie.lister.raw.two.impl'
+
+include 'osgi:movie.finder.ds.api'
+include 'osgi:movie.finder.ds.impl'
+include 'osgi:movie.lister.ds.impl'
+
+
+include 'osgi:integration'

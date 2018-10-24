@@ -1,0 +1,16 @@
+description = 'OSGi Service API'
+
+apply plugin: 'osgi'
+
+dependencies {
+    compile lib_sets.core
+}
+
+
+jar {
+    manifest {
+        instruction 'Bundle-Name', project.description
+        instruction 'Export-Package', 'com.cbse.osgi.movie.finder.api'
+//        instruction 'Service-Component', 'OSGI-INF/*.xml'
+    }
+}

@@ -1,0 +1,19 @@
+description = 'OSGi Service API'
+
+apply plugin: 'osgi'
+
+dependencies {
+    compile lib_sets.core
+    compile libraries.osgi_core
+    compile project(':osgi:movie.lister.raw.api')
+}
+
+
+jar {
+    manifest {
+        instruction 'Bundle-Name', project.description
+        instruction 'Export-Package', 'com.cbse.osgi.movie.lister.one.impl'
+//        instruction 'Service-Component', 'OSGI-INF/*.xml'
+        instruction 'Bundle-Activator', 'com.cbse.osgi.movie.lister.one.impl.FileMovieListerActivator'
+    }
+}

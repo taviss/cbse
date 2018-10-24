@@ -1,0 +1,10 @@
+Properties properties = new Properties()
+FileInputStream input = new FileInputStream(file('../gradle.properties'))
+properties.load(input)
+input.close()
+
+if (properties.containsKey('privateNexusUser')) {
+	for (String key : properties.stringPropertyNames()) {
+		ext.set(key, properties.getProperty(key))
+	}
+}

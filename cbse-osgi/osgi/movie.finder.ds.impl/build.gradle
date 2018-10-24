@@ -1,0 +1,18 @@
+description = 'OSGi Movie Finder DS Impl'
+
+apply plugin: 'osgi'
+
+dependencies {
+    compile lib_sets.core
+    compile libraries.osgi_core
+    compile project(':osgi:movie.finder.ds.api')
+}
+
+
+jar {
+    manifest {
+        instruction 'Bundle-Name', project.description
+        instruction 'Export-Package', 'com.cbse.osgi.movie.finder.ds.impl'
+        instruction 'Service-Component', 'OSGI-INF/*.xml'
+    }
+}
