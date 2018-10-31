@@ -1,15 +1,8 @@
-plugins {
-    id 'java'
-}
-
 group 'com.cbse'
-version '1.0-SNAPSHOT'
+
+description = 'Core'
 
 sourceCompatibility = 1.8
-
-subprojects {
-    apply plugin: 'java'
-}
 
 repositories {
     mavenCentral()
