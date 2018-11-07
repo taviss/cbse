@@ -1,22 +1,24 @@
 package com.cbse.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * A {@link Component} reference based value.
  */
 @XmlRootElement(name = "ref")
-public class ReferenceValue extends AttributeValue<Component>
+public class ReferenceValue extends AttributeValue<String>
 {
-    private Component component;
+    private String component;
 
     @Override
-    public Component getValue() {
+    @XmlValue
+    public String getValue() {
         return this.component;
     }
 
     @Override
-    public void setValue(Component value) {
+    public void setValue(String value) {
         this.component = value;
     }
 }

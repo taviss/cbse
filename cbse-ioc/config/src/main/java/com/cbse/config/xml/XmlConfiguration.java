@@ -32,9 +32,9 @@ public class XmlConfiguration implements Configuration
     }
 
     @Override
-    public List<Component> getComponents() throws ConfigurationException {
+    public Container getComponents() throws ConfigurationException {
         if(container != null) {
-            return this.container.getComponentList();
+            return this.container;
         } else {
             throw new ConfigurationException("Container not initialized for " + xml.getPath());
         }

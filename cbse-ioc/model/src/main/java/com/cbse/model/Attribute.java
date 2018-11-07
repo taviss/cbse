@@ -1,9 +1,6 @@
 package com.cbse.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 /**
  * Represents an attribute(property) of a {@link Component}
@@ -17,8 +14,10 @@ public class Attribute
     /** This attribute's value. */
     private AttributeValue value;
 
+    private Component parent;
+
     @XmlElements({
-            @XmlElement(name="ref", type=StringValue.class),
+            @XmlElement(name="ref", type=ReferenceValue.class),
             @XmlElement(name="value", type=StringValue.class)
     })
     public AttributeValue getValue() {
@@ -36,5 +35,18 @@ public class Attribute
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Returns the tied attribute.
+     * @return the attribute.
+     */
+    @XmlTransient
+    public Component getParent() {
+        return this.parent;
+    }
+
+    public void setParent(Component parent) {
+        this.parent = parent;
     }
 }

@@ -45,7 +45,9 @@ public class ConfigurationUnmarshaller
         {
             for(Attribute attribute : component.getAttributes()) {
                 attribute.getValue().setParent(attribute);
+                attribute.setParent(component);
             }
+            component.setContainer(container);
         }
     }
 }

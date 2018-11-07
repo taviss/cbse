@@ -4,5 +4,8 @@
         <property id="x">
             <value>5</value>
         </property>
+        <property id="y">
+            <ref>x</ref>
+        </property>
     </component>
 </context>
