@@ -1,0 +1,18 @@
+group 'com.cbse'
+
+description = 'Application API'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.1'
+    compile group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0'
+    compile project(':global')
+    compile project(':realizator.impl')
+    
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

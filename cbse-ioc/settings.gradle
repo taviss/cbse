@@ -6,3 +6,6 @@ include 'config'
 include 'model'
 include 'realizator.api'
 include 'realizator.impl'
+
+include 'application'
+include 'demo'

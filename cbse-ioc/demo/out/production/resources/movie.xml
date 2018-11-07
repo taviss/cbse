@@ -1,0 +1,12 @@
+<context>
+    <component id="MovieLister" class="com.some.name.MovieLister">
+        <property id="finder">
+            <ref>MovieFinder</ref>>
+        </property>
+    </component>
+    <component id="MovieFinder" class="com.some.name.SomeMovieFinder">
+        <property id="filename">
+            <value>movies1.txt</value>
+        </property>
+    </component>
+</context>

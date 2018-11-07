@@ -36,6 +36,21 @@ public class GlobalContext
         return globalContext;
     }
 
+    /**
+     * Create a GlobalContext from a series of configurations.
+     * @param configs the configs.
+     * @return a new context.
+     * @throws ConfigurationException
+     */
+    public static GlobalContext from(List<Configuration> configs) throws ConfigurationException
+    {
+        GlobalContext globalContext = new GlobalContext();
+        for(Configuration config : configs) {
+            globalContext.addComponents(config.getComponents());
+        }
+        return globalContext;
+    }
+
     protected void addComponents(Container container)
     {
         componentContainer.add(container);

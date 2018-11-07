@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+    <component id="test1" class="com.cbse.config.xml">
+        <property id="x">
+            <value>5</value>
+        </property>
+        <property id="y">
+            <ref>x</ref>
+        </property>
+    </component>
+</context>

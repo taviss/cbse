@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+    <component id="test1" class="com.cbse.realizator.impl.DummyClass">
+        <property id="x">
+            <value>5</value>
+        </property>
+    </component>
+    <component id="test2" class="com.cbse.realizator.impl.RefDummyClass">
+        <property id="dummyClass">
+            <ref>test1</ref>
+        </property>
+    </component>
+</context>
